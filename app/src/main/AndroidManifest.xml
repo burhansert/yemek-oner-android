@@ -26,12 +26,12 @@
                 android:value="" />
         </activity>
 
-        <activity android:name=".YemekEkleActivity"
-            android:parentActivityName=".MainActivity"
+        <activity android:name=".YemekOnerActivity"
+            android:parentActivityName=".YemekOnerActivity"
             >
         </activity>
-        <activity android:name=".yemekListeleActivity"
-            android:parentActivityName=".MainActivity"
+        <activity android:name=".YemekListeleActivity"
+            android:parentActivityName=".YemekListeleActivity"
             >
         </activity>
     </application>

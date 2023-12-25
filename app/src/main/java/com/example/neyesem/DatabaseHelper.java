@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "neYesemData.db";
@@ -24,11 +27,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // Insert data
-    public void insertData(String yemekAdi,String yemekTarifi) {
+    public void insertData(String yemekAdi,String yemekTarifi,String malzemeler) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("yemekAdi", yemekAdi);
         contentValues.put("yemekTarifi", yemekTarifi);
+        contentValues.put("malzemeler", malzemeler);
         db.insert("yemeklerTABLE", null, contentValues);
     }
 
@@ -38,6 +42,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String query = "SELECT * FROM yemeklerTABLE";
         Cursor cursor = db.rawQuery(query, null);
         return cursor;
+    }
+
+    public ArrayList<YemekModel> Listele_Yemek(){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ArrayList<YemekModel> veriler= new ArrayList<YemekModel>();//String türünde bir liste oluşturduk.
+
+        //if(hesapAdi.equals("")) hesapAdi="%"; //bu ifadeyi yazmazsak ana ekrandan kayit oluştururken hata veriyor
+
+        String sorgu="SELECT * FROM "+"yemeklerTABLE";
+               // +" WHERE "
+               // +Hesap_Adi+" LIKE '"+hesapAdi+"'"+ " AND "
+               // +Hesap_Kuru+" LIKE '"+kur+"'";
+
+        Cursor cr=db.rawQuery(sorgu,null);//query fonksiyonu ile aldığımız parametreler yoluyla komutu kendi içerisinde yapılandırıyoruz.
+
+        while(cr.moveToNext())
+        {//sırasıyla verileri listelememizi sağlıyor.
+            veriler.add(new YemekModel(cr.getString(0),cr.getString(1), cr.getString(2),cr.getString(3)));
+        }
+
+        //Collections.sort(veriler, Collections.reverseOrder(new SiralaHesap())); //sirasi yuksek olan en yukarıda
+        //Collections.sort(veriler, Collections.reverseOrder(new SiralaHesap())); //sirasi yuksek olan en yukarıda
+
+        System.out.println("mesaj463-"+veriler.get(0).Yemek_YemekAdi);
+
+        return veriler;
     }
 
     // Update data

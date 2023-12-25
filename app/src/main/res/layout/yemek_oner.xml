@@ -27,7 +27,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/editTextYemekAdi"
+            android:id="@+id/editTextMalzemeler"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -49,7 +49,7 @@
             android:backgroundTint="#00BCD4"
             android:text="Yemek Öner"
             android:textAlignment="center"
-            android:onClick="yemekKaydet"
+            android:onClick="yemekOner"
             />
 
         <TextView
