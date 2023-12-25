@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -66,7 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //Collections.sort(veriler, Collections.reverseOrder(new SiralaHesap())); //sirasi yuksek olan en yukarıda
         //Collections.sort(veriler, Collections.reverseOrder(new SiralaHesap())); //sirasi yuksek olan en yukarıda
 
-        System.out.println("mesaj463-"+veriler.get(0).Yemek_YemekAdi);
+        System.out.println("mesaj463-"+veriler.get(0).yemekAdiString);
 
         return veriler;
     }

@@ -13,9 +13,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
 
     Context context;
-    List<Item> items;
+    List<YemekModel> items;
 
-    public MyAdapter(Context context, List<Item> items) {
+    public MyAdapter(Context context, List<YemekModel> items) {
         this.context = context;
         this.items = items;
     }
@@ -28,8 +28,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull  MyViewHolder holder, int position) {
-        holder.nameView.setText(items.get(position).getName());
-        holder.emailView.setText(items.get(position).getEmail());
+        holder.yemekAdiTextView.setText(items.get(position).getYemekAdi());
+        holder.dogrulukTextView.setText(items.get(position).getDogruluk());
         holder.imageView.setImageResource(items.get(position).getImage());
     }
 

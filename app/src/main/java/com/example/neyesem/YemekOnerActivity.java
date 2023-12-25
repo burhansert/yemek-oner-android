@@ -44,29 +44,22 @@ public class YemekOnerActivity extends AppCompatActivity {
         DatabaseHelper dbHelper = new DatabaseHelper(this);
         //dbHelper.insertData("qq", "ww","rrr");
 
-        dbHelper.Listele_Yemek();
+        List<YemekModel> yemekList;
+        //itemList = new ArrayList<YemekModel>();
+        yemekList=dbHelper.Listele_Yemek();
 
-        RecyclerView recyclerView = findViewById(R.id.recylerviewMalzemeler);
+        RecyclerView recyclerView = findViewById(R.id.recylerviewYemekler);
 
-        List<Item> items = new ArrayList<Item>();
-        items.add(new Item("John wick","john.wick@email.com",R.drawable.a));
-        items.add(new Item("Robert j","robert.j@email.com",R.drawable.b));
-        items.add(new Item("James Gunn","james.gunn@email.com",R.drawable.c));
-        items.add(new Item("Ricky tales","rickey.tales@email.com",R.drawable.d));
-        items.add(new Item("Micky mose","mickey.mouse@email.com",R.drawable.e));
-        items.add(new Item("Pick War","pick.war@email.com",R.drawable.f));
-        items.add(new Item("Leg piece","leg.piece@email.com",R.drawable.g));
-        items.add(new Item("Apple Mac","apple.mac@email.com",R.drawable.g));
-        items.add(new Item("John wick","john.wick@email.com",R.drawable.a));
-        items.add(new Item("Robert j","robert.j@email.com",R.drawable.b));
-        items.add(new Item("James Gunn","james.gunn@email.com",R.drawable.c));
-        items.add(new Item("Ricky tales","rickey.tales@email.com",R.drawable.d));
-        items.add(new Item("Micky mose","mickey.mouse@email.com",R.drawable.e));
-        items.add(new Item("Pick War","pick.war@email.com",R.drawable.f));
-        items.add(new Item("Leg piece","leg.piece@email.com",R.drawable.g));
-        items.add(new Item("Apple Mac","apple.mac@email.com",R.drawable.g));
+        /*List<YemekModel> items = new ArrayList<YemekModel>();
+        items.add(new YemekModel("Fasülye","%70",R.drawable.a));
+        items.add(new YemekModel("Nohut","%60",R.drawable.b));
+        items.add(new YemekModel("Erişte","%30",R.drawable.c));*/
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new MyAdapter(getApplicationContext(),items));
+        recyclerView.setAdapter(new MyAdapter(getApplicationContext(),yemekList));
+
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //recyclerView.setAdapter(new MyAdapter(getApplicationContext(),itemList));
+
     }
 }

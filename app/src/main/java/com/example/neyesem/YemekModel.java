@@ -1,25 +1,52 @@
 package com.example.neyesem;
 
+import java.util.Random;
+
 public class YemekModel {
 
-    public int kartTuru=0;
+    String yemekIdString;
+    String yemekAdiString;
+    String yemekTarifiString;
+    String malzemelerString;
+    String dogrulukString;
+    int image;
 
-    /*public YemekModel()
-    {
+    public YemekModel(String yemekId,String yemekAdi, String yemekTarifi,  String malzemeler) {
+        this.yemekIdString = yemekId;
+        this.yemekAdiString = yemekAdi;
+        this.yemekTarifiString = yemekTarifi;
+        this.malzemelerString = malzemeler;
+
+        this.dogrulukString = "Doğruluk %90";
+
+        Random rand = new Random();
+        int rand_int1 = rand.nextInt(3); //0 dan 2 ye kadar tam sayılar
+        if(rand_int1==0) this.image = R.drawable.a;
+        if(rand_int1==1) this.image = R.drawable.b;
+        if(rand_int1==2) this.image = R.drawable.c;
+    }
+
+    public String getYemekAdi() {
+        return yemekAdiString;
+    }
+
+    /*public void setName(String name) {
+        this.name = name;
     }*/
 
+    public String getDogruluk() {
+        return dogrulukString;
+    }
 
-    //-------7 giriş-------
+    /*public void setEmail(String email) {
+        this.email = email;
+    }*/
 
-    public String Yemek_Id;
-    public String Yemek_YemekAdi;
-    public String Yemek_YemekTarifi;
-    public String Yemek_Malzemeler;
+    public int getImage() {
+        return image;
+    }
 
-    public YemekModel(String Yemek_Id, String Yemek_YemekAdi, String Yemek_YemekTarifi, String Yemek_Malzemeler) {
-        this.Yemek_Id = Yemek_Id;
-        this.Yemek_YemekAdi = Yemek_YemekAdi;
-        this.Yemek_YemekTarifi=Yemek_YemekTarifi;
-        this.Yemek_Malzemeler=Yemek_Malzemeler;
+    public void setImage(int image) {
+        this.image = image;
     }
 }
