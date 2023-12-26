@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,35 +32,24 @@ public class YemekOnerActivity extends AppCompatActivity {
 
     public void yemekOner(View view) {
         strMalzemeler = editTextMalzemeler.getText().toString();
-        //strYemekTarifi = editTextYemekTarifi.getText().toString();
 
-        //DatabaseHelper dbHelper = new DatabaseHelper(this);
-        //dbHelper.insertData(strYemekAdi, strYemekTarifi);
-
-        //Intent intent = new Intent(this, YemekEkleActivity.class);
-        //startActivity(intent);
-
-        //this.finish();
 
         DatabaseHelper dbHelper = new DatabaseHelper(this);
-        //dbHelper.insertData("qq", "ww","rrr");
 
+        //dbHelper.test();
         List<YemekModel> yemekList;
-        //itemList = new ArrayList<YemekModel>();
         yemekList=dbHelper.Listele_Yemek();
 
         RecyclerView recyclerView = findViewById(R.id.recylerviewYemekler);
 
-        /*List<YemekModel> items = new ArrayList<YemekModel>();
-        items.add(new YemekModel("Fasülye","%70",R.drawable.a));
-        items.add(new YemekModel("Nohut","%60",R.drawable.b));
-        items.add(new YemekModel("Erişte","%30",R.drawable.c));*/
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //ArrayList<YemekModel> veriler= new ArrayList<YemekModel>();
+        //veriler.add(new YemekModel("1", "cc", "1", "1"));
+
+
         recyclerView.setAdapter(new MyAdapter(getApplicationContext(),yemekList));
 
-        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //recyclerView.setAdapter(new MyAdapter(getApplicationContext(),itemList));
 
     }
 }
