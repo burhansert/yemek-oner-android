@@ -39,7 +39,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (dbexist) {
             opendatabase();
         } else {
-            System.out.println("Database doesn't exist");
+            System.out.println("Veritabi yok");
             createdatabase();
         }
     }
@@ -107,6 +107,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Creating the table
     //private static final String CREATE_TABLE = "CREATE TABLE yemeklerTABLE (id INTEGER PRIMARY KEY AUTOINCREMENT, yemekAdi TEXT, yemekTarifi TEXT,malzemeler TEXT)";
 
+
+
     @Override
     public void onCreate(SQLiteDatabase db)  //program ilk oluştuğunda veritabanı oluşturuluyor ve veriler kaydediliyor
     {
@@ -118,7 +120,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             e.printStackTrace();
         }*/
 
-        createdatabase();
+        //createdatabase();
 
         //db.execSQL(CREATE_TABLE);
 

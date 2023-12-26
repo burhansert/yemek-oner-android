@@ -36,7 +36,8 @@ public class YemekOnerActivity extends AppCompatActivity {
 
         DatabaseHelper dbHelper = new DatabaseHelper(this);
 
-        //dbHelper.test();
+        dbHelper.test();
+
         List<YemekModel> yemekList;
         yemekList=dbHelper.Listele_Yemek();
 
@@ -45,8 +46,8 @@ public class YemekOnerActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         //ArrayList<YemekModel> veriler= new ArrayList<YemekModel>();
+        //List<YemekModel> veriler = new ArrayList<YemekModel>();
         //veriler.add(new YemekModel("1", "cc", "1", "1"));
-
 
         recyclerView.setAdapter(new MyAdapter(getApplicationContext(),yemekList));
 

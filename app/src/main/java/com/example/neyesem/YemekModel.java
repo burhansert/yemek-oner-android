@@ -8,6 +8,7 @@ public class YemekModel {
     String yemekAdiString;
     String yemekTarifiString;
     String malzemelerString;
+
     String dogrulukString;
     int image;
 
