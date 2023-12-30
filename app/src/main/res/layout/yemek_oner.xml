@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECEF9E"
+    android:background="#1EB2FC"
     android:textAlignment="center" >
 
 
@@ -34,6 +34,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:ems="10"
+            android:hint="buraya yaz:)"
             android:inputType="textPersonName"
             tools:layout_editor_absoluteX="47dp"
             tools:layout_editor_absoluteY="67dp" />
@@ -46,7 +47,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:height="60dp"
-            android:backgroundTint="#00BCD4"
+            android:backgroundTint="#F45456"
             android:text="Yemek Öner"
             android:textAlignment="center"
             android:onClick="yemekOner"

@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="WalletKayitDark">#017cb7</color>
+    <color name="WalletKayitMenu">#039be6</color>
+    <color name="WalletKayitPhoto">#04aaff</color>
 </resources>

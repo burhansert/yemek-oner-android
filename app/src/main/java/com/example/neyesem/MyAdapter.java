@@ -29,7 +29,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull  MyViewHolder holder, int position) {
         holder.yemekAdiTextView.setText(items.get(position).getYemekAdi());
-        holder.dogrulukTextView.setText(items.get(position).getDogruluk());
+        holder.dogrulukTextView.setText("%"+items.get(position).getDogruluk());
         holder.imageView.setImageResource(items.get(position).getImage());
     }
 

@@ -39,7 +39,7 @@ public class YemekOnerActivity extends AppCompatActivity {
         dbHelper.test();
 
         List<YemekModel> yemekList;
-        yemekList=dbHelper.Listele_Yemek();
+        yemekList=dbHelper.Listele_Yemek(strMalzemeler);
 
         RecyclerView recyclerView = findViewById(R.id.recylerviewYemekler);
 

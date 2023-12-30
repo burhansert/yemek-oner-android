@@ -11,6 +11,9 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Environment;
 
+import java.text.DecimalFormat;
+import java.util.Collections;
+import java.util.HashSet;
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
@@ -154,7 +157,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
     }
 
-    public ArrayList<YemekModel> Listele_Yemek(){
+    public ArrayList<YemekModel> Listele_Yemek(String yemekAdi){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ArrayList<YemekModel> veriler= new ArrayList<YemekModel>();//String türünde bir liste oluşturduk.
@@ -170,14 +173,72 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
         while(cr.moveToNext())
+
         {//sırasıyla verileri listelememizi sağlıyor.
-            veriler.add(new YemekModel(cr.getString(0),cr.getString(1), cr.getString(2),cr.getString(3)));
+            YemekModel YemekModel1=new YemekModel();
+            YemekModel1.yemekIdString=cr.getString(0);
+            YemekModel1.yemekAdiString=cr.getString(1);
+            YemekModel1.yemekTarifiString=cr.getString(2);
+            YemekModel1.malzemelerString=cr.getString(3);
+
+            //String metin1 = "sucuk yumurta";
+            double benzerlikYuzde = jaccardBenzerligi(yemekAdi, YemekModel1.malzemelerString);
+            //System.out.println("Metinler arasındaki benzerlik: " + benzerlikYuzde + "%");
+
+            //DecimalFormat df = new DecimalFormat("#.##");//virgülden sonra iki basamak olsun
+            //System.out.println("ss33".concat(df.format(benzerlikYuzde)));
+            //benzerlik=df.format(benzerlik);
+
+            YemekModel1.dogrulukString=Double.toString(benzerlikYuzde);
+
+
+
+            //veriler.add(new YemekModel(cr.getString(0),cr.getString(1), cr.getString(2),cr.getString(3)));
             //veriler.add(new YemekModel("", "cc", "", ""));
             //break;
             //System.out.println("mesaj463-"+cr.getString(1));
+            //if(!YemekModel1.dogrulukString.equals("0.0"))
+                veriler.add(YemekModel1);
+
+        }
+
+        Collections.sort(veriler, new SiralaYemek());
+        Collections.reverse(veriler);
+
+        while (veriler.size()>20) //20 yemekten sonrasını sil
+        {
+            veriler.remove(veriler.size()-1);
         }
 
         return veriler;
+    }
+
+    public static double jaccardBenzerligi(String metin1, String metin2) {
+        // Metinleri kelimelere ayır
+        String[] kelimeler1 = metin1.split("\\s*,\\s*|\\s+");
+        String[] kelimeler2 = metin2.split("\\s*,\\s*|\\s+");
+
+        // Her metindeki benzersiz kelimelerin listesini oluştur
+        HashSet<String> set1 = new HashSet<>();
+        HashSet<String> set2 = new HashSet<>();
+
+        for (String kelime : kelimeler1) {
+            set1.add(kelime.toLowerCase());
+        }
+        for (String kelime : kelimeler2) {
+            set2.add(kelime.toLowerCase());
+        }
+
+        // Jaccard benzerliğini hesapla: |A ∩ B| / |A ∪ B|
+        HashSet<String> birlesim = new HashSet<>(set1);
+        birlesim.addAll(set2);
+
+        HashSet<String> kesisim = new HashSet<>(set1);
+        kesisim.retainAll(set2);
+
+        double benzerlik = (double) kesisim.size() / birlesim.size();
+
+        return benzerlik * 100; // Yüzde olarak döndür
     }
 
     // Update data

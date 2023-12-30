@@ -1,5 +1,6 @@
 package com.example.neyesem;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class YemekModel {
@@ -12,6 +13,10 @@ public class YemekModel {
     String dogrulukString;
     int image;
 
+    public YemekModel() {
+        rastgeleIconAta();
+    }
+
     public YemekModel(String yemekId,String yemekAdi, String yemekTarifi,  String malzemeler) {
         this.yemekIdString = yemekId;
         this.yemekAdiString = yemekAdi;
@@ -20,6 +25,10 @@ public class YemekModel {
 
         this.dogrulukString = "Doğruluk %90";
 
+        rastgeleIconAta();
+    }
+
+    void rastgeleIconAta() {
         Random rand = new Random();
         int rand_int1 = rand.nextInt(3); //0 dan 2 ye kadar tam sayılar
         if(rand_int1==0) this.image = R.drawable.a;
@@ -36,7 +45,15 @@ public class YemekModel {
     }*/
 
     public String getDogruluk() {
-        return dogrulukString;
+        String dogruluk=this.dogrulukString;
+
+        //DecimalFormat df = new DecimalFormat("#.##");//virgülden sonra iki basamak olsun
+        //System.out.println("ss33".concat(df.format(benzerlikYuzde)));
+        //dogruluk=df.format(dogruluk);
+        int noktaninYeri=dogruluk.indexOf('.');
+        dogruluk=dogruluk.substring(0,noktaninYeri+2);
+
+        return dogruluk;
     }
 
     /*public void setEmail(String email) {

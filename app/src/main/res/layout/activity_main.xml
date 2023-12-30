@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECEF9E"
+    android:background="#1EB2FC"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -19,13 +19,15 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
             android:layout_margin="20dp"
             android:height="60dp"
+            android:background="#1EB2FC"
             android:gravity="center"
-            android:text="Hoş Geldiniz"
+            android:text="Merhaba acıktın mı ☺️\n\nAşağıdaki butona tıkla 👍\n\nEvinde 🥔 olan 🥕\n\nmalzemeleri 🍆 yaz 🥦\n\nbende sana yemek önereyim 🐓"
             android:textAlignment="center"
+
             android:textColor="#000000"
             android:textSize="20sp" />
 
@@ -35,21 +37,17 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:height="60dp"
-            android:backgroundTint="#00BCD4"
-            android:text="Yemek Öner"
+            android:backgroundTint="#F45456"
             android:onClick="yemekOner"
-            />
+            android:text="Yemek Öner" />
 
-
-        <Button
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="20dp"
-            android:height="60dp"
-            android:backgroundTint="#00BCD4"
-            android:text="Yemek Listele"
-            android:onClick="yemekListele"
-            />
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/img" />
 
 
     </LinearLayout>
