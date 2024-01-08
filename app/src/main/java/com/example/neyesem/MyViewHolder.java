@@ -3,6 +3,7 @@ package com.example.neyesem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,4 +19,6 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         yemekAdiTextView = itemView.findViewById(R.id.yemekAdi);
         dogrulukTextView = itemView.findViewById(R.id.dogruluk);
     }
+
+
 }

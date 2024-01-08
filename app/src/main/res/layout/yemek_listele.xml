@@ -1,36 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+
+
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView1"
+    android:background="#1EB2FC"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECEF9E"
-    android:textAlignment="center"
-    android:orientation="vertical"
-    tools:ignore="MissingDefaultResource">
+    >
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:text="Yemek Listesi :"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="161dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recylerviewMalzemeler"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="181dp"
-        tools:listitem="dd,kşk,lşi" />
+        android:layout_height="wrap_content"
+        android:background="#1EB2FC"
+        android:textAlignment="center"
+        android:orientation="vertical"
+      >
 
-</LinearLayout>
+
+        <TextView
+            android:id="@+id/yemekAdiTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Yemek Adı :"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="161dp" />
+
+        <TextView
+            android:id="@+id/malzemeler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Malzemeler :"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="161dp" />
+
+        <TextView
+            android:id="@+id/malzemelerTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
+            android:text="adad\nfhfgh\ncc"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="161dp" />
+
+
+        <TextView
+            android:id="@+id/yemekTarifiTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Yemek Tarifi :"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="161dp" />
+
+        <TextView
+            android:id="@+id/yemekTarifiTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
+            android:justificationMode="inter_word"
+            android:text="xxxxxx sdfsdf sdf  sd fsd sdf sdf sd fsdf sd fsd sd fsd s sd sd fsdf sdf sdf sdf sdf sd fsdf sd fsdf sdf sf"
+            android:textAlignment="gravity"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="161dp" />
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

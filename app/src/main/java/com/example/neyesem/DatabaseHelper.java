@@ -162,7 +162,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         ArrayList<YemekModel> veriler= new ArrayList<YemekModel>();//String türünde bir liste oluşturduk.
 
-        System.out.println("mesaj461");
+        //System.out.println("mesaj461");
 
         String sorgu="SELECT * FROM "+"yemeklerTABLE";
                // +" WHERE "

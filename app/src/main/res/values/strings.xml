@@ -2,4 +2,9 @@
     <string name="app_name">Ne Yesem</string>
     <!-- Strings used for fragments for navigation -->
 
+    <string-array name="yemekMalzeme">
+        <item>Domates</item>
+        <item>Marul</item>
+    </string-array>
+
 </resources>
